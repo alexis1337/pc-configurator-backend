@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: pc-configurator-backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pc_configurator_db
+    username: user
+    password: P@ssw0rd123!
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+
+  profiles:
+    active: default
+
+logging:
+  level:
+    org.springframework: INFO
+
+server:
+  port: 8080
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+rabbitmq:
+   host: localhost
+   port: 5672
+   username: guest
+   password: guest
+
+security:
+  jwt:
+    secret: "change-me-to-a-very-long-super-secret-key-1234567890"
+    expiration-ms: 86400000
+
+
